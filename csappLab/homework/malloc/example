@@ -1,0 +1,71 @@
+// 伪代码
+uint64_t heap_start_address = random;
+
+void *malloc(uint32_t size)
+{
+    uint64_t p = heap_start_address;
+
+    while (1)
+    {
+        uint32_t header_value = *((uint32_t *)p);
+
+        uint32_t p_allocated = header_value & 0x01;
+        uint32_t p_block_size = header_value & 0xFFFFFFFE;
+
+        if(p_allocated == 0 &&
+           p_block_size - sizeof(uint32_t) >= size)
+        {
+            // split空间
+            uint32_t request_block_size = 4 + size;
+            if (request_block_size & 0x7 != 0)
+            {
+                request_block_size = request_block_size & 0xFFFFFFFE + 0x8;
+            }
+
+            uint32_t next_block_header_addr = p + request_block_size;
+            *(uint32_t*) next_block_header_addr = p_block_size - request_block_size;
+
+            *(uint32_t *)p = request_block_size;     // size
+            *(uint32_t *)p = *(uint32_t *)p | 0x1;   // allocated
+            
+
+            // 如果满足空间未分配且该block满足空间大小要求则返回存放数据的头指针
+            return (void*)(p + sizeof(uint32_t));
+        }
+        else
+        {
+            // 寻找下一个header头
+            p = p + p_block_size;
+        }
+    }
+}
+
+void free(void *p)
+{
+    uint64_t payload_addr = (uint64_t)p;
+    uint64_t header_addr = payload_addr - 4;
+    uint32_t allocated = (*(uint32_t *)header_addr) & 0x1;
+
+    if(allocated == 0)
+    {
+        printf("free twice");
+        return;
+    }
+
+    // allocated == 1
+    uint32_t block_size = (*(uint32_t *)header_addr) & 0xFFFFFFFE;
+    uint64_t q = header_addr + block_size;
+    uint32_t q_allocated = get_allocated(q);
+    uint32_t q_block_size = get_block_size(q);
+    if(q_allocated == 1)
+    {
+        set_free(header_addr);
+        return;
+    }
+    else
+    {
+        // merge p & q
+        set_size(header_addr, block_size + q_block_size);
+        set_free(header_addr);
+    }
+}

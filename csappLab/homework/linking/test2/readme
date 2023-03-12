@@ -1,0 +1,35 @@
+##
+### 使用C预处理器进行编译时打桩
+mymalloc.c中的包装函数调用目标函数，打印追踪记录，并返回，本地的malloc.h指示预处理器用对应的包装函数替换掉对目标函数的调用
+gcc -DCOMPILETIME -c mymalloc.c
+gcc -I. -o intc int.c mymalloc.o
+##### 测试结果
+运行该程序会得到以下追踪信息
+```
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -DCOMPILETIME -c mymalloc.c -Wall
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -I. -o intc int.c mymalloc.o -Wall
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# ./intc 
+malloc(32) = 0x5579b3b152a0
+free(0x5579b3b152a0)
+```
+
+### 用--wrap标志进行链接时打桩
+Linux静态链接器支持用--wrap f标志进行链接时打桩。这个标志告诉链接器，把对符号f的引用解析成__wrap_f（前缀是两个下划线）
+，还要把__real_f（前缀是两个下划线）的引用解析为f。
+-Wl,option标志把option传递给链接器。option中每个都好都要替换为一个空格。所以-Wl,wrap,malloc就把--wrap malloc传递给链接器
+##### 测试结果
+```
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -DLINKTIME -c mymalloc2.c 
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -c int.c
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -Wl,--wrap,malloc -Wl,--wrap,free -o intl int.o mymalloc2.o
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# ./intl
+malloc(32) = 0x5579f00372a0
+free(0x5579f00372a0)
+```
+
+### 用LD_PRELOAD进行运行时打桩
+每个包装函数中对dlsym的调用返回指向目标libc函数的指针。然后包装函数调用目标函数，打印追踪记录，再返回。
+##### 测试结果
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -DRUNTIME -shared -fpic -o mymalloc3.so mymalloc3.c -ldl
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# gcc -o intr int.c
+root@VM5811-oslab:~/vsCodeProjects/csappLab/homework/linking/test2# LD_PRELOD="./mymalloc3.so" ./intr

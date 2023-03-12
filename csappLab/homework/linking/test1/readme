@@ -1,0 +1,41 @@
+## This project is a little test, but it's so cool!
+### first
+首先是在addvec.c和mulvec.c中定义了两个向量运算的“模块”，我更期望你能叫它模块而不是函数
+### second
+gcc -c addvec.c multvec.c
+编译两个.c文件生成对应的目标.o文件
+ar rcs libvector.a addvec.o multvec.o # 关于这个命令可以去看附录1
+### third for test
+在vector.h中声明了这两个模块，然后就可以在main测试文件中引用这两个模块使用了
+gcc -c main.c
+gcc -static -o progc main.o ./libvector.a
+or gcc -static -o progc main.o -L. lvector
+### fourth for summary
+链接器（ld）在链接的时候还会复制libc.a中的printf.o模块，以及许多c运行时系统中的其他模块
+
+
+### fifth
+生成动态链接库
+gcc -shared -fpic -o libvector.so addvec.c multvec.c
+gcc -o prog2c main.c ./libvector.so
+
+
+## 附录1
+GCC 生成静态链接库
+1) 首先使用 gcc 命令把源文件编译为目标文件，也即.o文件：
+gcc -c 源文件列表
+
+-c选项表示只编译，不链接，我们已在《GCC -c选项》中进行了讲解。
+
+2) 然后使用 ar 命令将.o文件打包成静态链接库，具体格式为：
+ar rcs + 静态库文件的名字 + 目标文件列表
+
+ar 是 Linux 的一个备份压缩命令，它可以将多个文件打包成一个备份文件（也叫归档文件），也可以从备份文件中提取成员文件。ar 命令最常见的用法是将目标文件打包为静态链接库。
+
+对参数的说明：
+参数 r 用来替换库中已有的目标文件，或者加入新的目标文件。
+参数 c 表示创建一个库。不管库否存在，都将创建。　
+参数 s 用来创建目标文件索引，这在创建较大的库时能提高速度。
+
+例如，下面的写法表示将目标文件 a.o、b.o 和 c.o 打包成一个静态库文件 libdemo.a：
+ar rcs libdemo.a a.o b.o c.o

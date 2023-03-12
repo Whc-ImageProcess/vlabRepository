@@ -1,0 +1,256 @@
+## 查看L1/L2/L3 cache大小
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# getconf -a | grep CACHE
+LEVEL1_ICACHE_SIZE                 32768
+LEVEL1_ICACHE_ASSOC                8
+LEVEL1_ICACHE_LINESIZE             64
+LEVEL1_DCACHE_SIZE                 32768
+LEVEL1_DCACHE_ASSOC                8
+LEVEL1_DCACHE_LINESIZE             64
+LEVEL2_CACHE_SIZE                  1048576
+LEVEL2_CACHE_ASSOC                 16
+LEVEL2_CACHE_LINESIZE              64
+LEVEL3_CACHE_SIZE                  11534336
+LEVEL3_CACHE_ASSOC                 11
+LEVEL3_CACHE_LINESIZE              64
+LEVEL4_CACHE_SIZE                  0
+LEVEL4_CACHE_ASSOC                 0
+LEVEL4_CACHE_LINESIZE              0
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# cat /sys/devices/system/cpu/cpu0/cache/index0/level
+1
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# cat /sys/devices/system/cpu/cpu0/cache/index0/type
+Data
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# cat /sys/devices/system/cpu/cpu0/cache/index0/size
+32K
+
+## appendix
+ls -l /sys/devices/system/cpu/cpu0/cache/index
+index0/ index1/ index2/
+index0和Index1是一级cache中的data和instruction cache
+ls -l /sys/devices/system/cpu/cpu0/cache/index0/
+level：cache等级 L1/L2/L3
+type：cache类型， （Data Cache，D-Cache）和一级指令缓存（Instruction Cache，I-Cache）
+size： cache大小
+一级缓存可以分为一级数据缓存（Data Cache，D-Cache）和一级指令缓存（Instruction Cache，I-Cache）。
+二者分别用来存放数据以及对执行这些数据的指令进行即时解码，而且两者可以同时被CPU访问，
+减少了争用Cache所造成的冲突，提高了处理器效能。目前大多数CPU的一级数据缓存和一级指令缓存具有相同的容量.
+
+
+## rotate
+//宏定义一个复制函数，方便程序编写
+#define COPY(d, s) *(d) = *(s)
+char rotate_descr[] = "rotate: Currentworking version";
+void rotate(int dim, pixel *src, pixel *dst)
+{
+    int i, j;
+    for (i = 0; i < dim; i += 32) // 32路循环展开，32个像素依次存储
+        for (j = dim - 1; j >= 0; j -= 1)
+        {
+            pixel *dptr = dst + RIDX(dim - 1 - j, i, dim);
+            pixel *sptr = src + RIDX(i, j, dim);
+            //进行复制操作
+            COPY(dptr, sptr);
+            sptr += dim;
+            COPY(dptr + 1, sptr);
+            sptr += dim;
+            COPY(dptr + 2, sptr);
+            sptr += dim;
+            COPY(dptr + 3, sptr);
+            sptr += dim;
+            COPY(dptr + 4, sptr);
+            sptr += dim;
+            COPY(dptr + 5, sptr);
+            sptr += dim;
+            COPY(dptr + 6, sptr);
+            sptr += dim;
+            COPY(dptr + 7, sptr);
+            sptr += dim;
+            COPY(dptr + 8, sptr);
+            sptr += dim;
+            COPY(dptr + 9, sptr);
+            sptr += dim;
+            COPY(dptr + 10, sptr);
+            sptr += dim;
+            COPY(dptr + 11, sptr);
+            sptr += dim;
+            COPY(dptr + 12, sptr);
+            sptr += dim;
+            COPY(dptr + 13, sptr);
+            sptr += dim;
+            COPY(dptr + 14, sptr);
+            sptr += dim;
+            COPY(dptr + 15, sptr);
+            sptr += dim;
+            COPY(dptr + 16, sptr);
+            sptr += dim;
+            COPY(dptr + 17, sptr);
+            sptr += dim;
+            COPY(dptr + 18, sptr);
+            sptr += dim;
+            COPY(dptr + 19, sptr);
+            sptr += dim;
+            COPY(dptr + 20, sptr);
+            sptr += dim;
+            COPY(dptr + 21, sptr);
+            sptr += dim;
+            COPY(dptr + 22, sptr);
+            sptr += dim;
+            COPY(dptr + 23, sptr);
+            sptr += dim;
+            COPY(dptr + 24, sptr);
+            sptr += dim;
+            COPY(dptr + 25, sptr);
+            sptr += dim;
+            COPY(dptr + 26, sptr);
+            sptr += dim;
+            COPY(dptr + 27, sptr);
+            sptr += dim;
+            COPY(dptr + 28, sptr);
+            sptr += dim;
+            COPY(dptr + 29, sptr);
+            sptr += dim;
+            COPY(dptr + 30, sptr);
+            sptr += dim;
+            COPY(dptr + 31, sptr);
+        }
+}
+
+
+
+## smooth 
+char smooth_descr[] = "smooth: Current working version";
+void smooth(int dim, pixel *src, pixel *dst)
+{
+    int i, j;
+    int dim0 = dim;
+    int dim1 = dim - 1;
+    int dim2 = dim - 2;
+    pixel *P1, *P2, *P3;
+    pixel *dst1 = NULL;
+    P1 = src;
+    P2 = P1 + dim0;
+    //左上角像素处理      采用移位运算代替avg的某些操作
+    dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red) >> 2;
+    dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green) >> 2;
+    dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue) >> 2;
+    dst++;
+    //上边界处理
+    for (i = 1; i < dim1; i++)
+    {
+        dst->red = (P1->red + (P1 + 1)->red + (P1 + 2)->red + P2->red + (P2 + 1)->red + (P2 + 2)->red) / 6;
+        dst->green = (P1->green + (P1 + 1)->green + (P1 + 2)->green + P2->green + (P2 + 1)->green + (P2 + 2)->green) / 6;
+        dst->blue = (P1->blue + (P1 + 1)->blue + (P1 + 2)->blue + P2->blue + (P2 + 1)->blue + (P2 + 2)->blue) / 6;
+        dst++;
+        P1++;
+        P2++;
+    }
+    //右上角像素处理
+    dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red) >> 2;
+    dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green) >> 2;
+    dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue) >> 2;
+    dst++;
+    P1 = src;
+    P2 = P1 + dim0;
+    P3 = P2 + dim0;
+    //左边界处理
+    for (i = 1; i < dim1; i++)
+    {
+        dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red + P3->red + (P3 + 1)->red) / 6;
+        dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green + P3->green + (P3 + 1)->green) / 6;
+        dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue + P3->blue + (P3 + 1)->blue) / 6;
+        dst++;
+        dst1 = dst + 1;
+    }
+    //主体中间部分处理
+    for (j = 1; j < dim2; j += 2)
+    {
+        //同时处理2个像素
+        dst->red = (P1->red + (P1 + 1)->red + (P1 + 2)->red + P2->red + (P2 + 1)->red + (P2 + 2)->red + P3->red + (P3 + 1)->red + (P3 + 2)->red) / 9;
+        dst->green = (P1->green + (P1 + 1)->green + (P1 + 2)->green + P2->green + (P2 + 1)->green + (P2 + 2)->green + P3->green + (P3 + 1)->green + (P3 + 2)->green) / 9;
+        dst->blue = (P1->blue + (P1 + 1)->blue + (P1 + 2)->blue + P2->blue + (P2 + 1)->blue + (P2 + 2)->blue + P3->blue + (P3 + 1)->blue + (P3 + 2)->blue) / 9;
+        dst1->red = ((P1 + 3)->red + (P1 + 1)->red + (P1 + 2)->red + (P2 + 3)->red + (P2 + 1)->red + (P2 + 2)->red + (P3 + 3)->red + (P3 + 1)->red + (P3 + 2)->red) / 9;
+        dst1->green = ((P1 + 3)->green + (P1 + 1)->green + (P1 + 2)->green + (P2 + 3)->green + (P2 + 1)->green + (P2 + 2)->green + (P3 + 3)->green + (P3 + 1)->green + (P3 + 2)->green) / 9;
+        dst1->blue = ((P1 + 3)->blue + (P1 + 1)->blue + (P1 + 2)->blue + (P2 + 3)->blue + (P2 + 1)->blue + (P2 + 2)->blue + (P3 + 3)->blue + (P3 + 1)->blue + (P3 + 2)->blue) / 9;
+        dst += 2;
+        dst1 += 2;
+        P1 += 2;
+        P2 += 2;
+        P3 += 2;
+    }
+    for (; j < dim1; j++)
+    {
+        dst->red = (P1->red + (P1 + 1)->red + (P1 + 2)->red + P2->red + (P2 + 1)->red + (P2 + 2)->red + P3->red + (P3 + 1)->red + (P3 + 2)->red) / 9;
+        dst->green = (P1->green + (P1 + 1)->green + (P1 + 2)->green + P2->green + (P2 + 1)->green + (P2 + 2)->green + P3->green + (P3 + 1)->green + (P3 + 2)->green) / 9;
+        dst->blue = (P1->blue + (P1 + 1)->blue + (P1 + 2)->blue + P2->blue + (P2 + 1)->blue + (P2 + 2)->blue + P3->blue + (P3 + 1)->blue + (P3 + 2)->blue) / 9;
+        dst++;
+        P1++;
+        P2++;
+        P3++;
+    }
+    //右侧边界处理
+    dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red + P3->red + (P3 + 1)->red) / 6;
+    dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green + P3->green + (P3 + 1)->green) / 6;
+    dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue + P3->blue + (P3 + 1)->blue) / 6;
+    dst++;
+    P1 += 2;
+    P2 += 2;
+    P3 += 2;
+
+    //左下角处理
+    dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red) >> 2;
+    dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green) >> 2;
+    dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue) >> 2;
+    dst++;
+    //下边界处理
+    for (i = 1; i < dim1; i++)
+    {
+        dst->red = (P1->red + (P1 + 1)->red + (P1 + 2)->red + P2->red + (P2 + 1)->red + (P2 + 2)->red) / 6;
+        dst->green = (P1->green + (P1 + 1)->green + (P1 + 2)->green + P2->green + (P2 + 1)->green + (P2 + 2)->green) / 6;
+        dst->blue = (P1->blue + (P1 + 1)->blue + (P1 + 2)->blue + P2->blue + (P2 + 1)->blue + (P2 + 2)->blue) / 6;
+        dst++;
+        P1++;
+        P2++;
+    }
+    //右下角像素处理
+    dst->red = (P1->red + (P1 + 1)->red + P2->red + (P2 + 1)->red) >> 2;
+    dst->green = (P1->green + (P1 + 1)->green + P2->green + (P2 + 1)->green) >> 2;
+    dst->blue = (P1->blue + (P1 + 1)->blue + P2->blue + (P2 + 1)->blue) >> 2;
+    //全部处理完毕
+}
+
+
+## 最终测试的结果
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# make driver 
+gcc -Wall -O2 -m32   -c -o kernels.o kernels.c
+gcc -Wall -O2 -m32 driver.o kernels.o fcyc.o clock.o -lm -o driver
+root@VM5811-oslab:~/vsCodeProjects/csappLab/lab4/perflab-handout# ./driver 
+Teamname: SA21218058
+Member 1: Hanchun Wang
+Email 1: 3235086327@qq.com
+
+Rotate: Version = naive_rotate: Naive baseline implementation:
+Dim		256	512	1024	2048	4096	Mean
+Your CPEs	5.1	8.8	14.5	41.4	49.1
+Baseline CPEs	14.7	40.1	46.4	65.9	94.5
+Speedup		2.9	4.5	3.2	1.6	1.9	2.6
+
+Rotate: Version = rotate: Currentworking version:
+Dim		256	512	1024	2048	4096	Mean
+Your CPEs	2.0	2.6	4.0	5.7	6.4
+Baseline CPEs	14.7	40.1	46.4	65.9	94.5
+Speedup		7.4	15.4	11.6	11.5	14.8	11.7
+
+Smooth: Version = smooth: Current working version:
+Dim		256	512	1024	2048	4096	Mean
+Your CPEs	15.9	14.9	16.6	17.7	17.8
+Baseline CPEs	695.0	698.0	702.0	717.0	722.0
+Speedup		43.7	46.9	42.4	40.4	40.5	42.7
+
+Smooth: Version = naive_smooth: Naive baseline implementation:
+Dim		256	512	1024	2048	4096	Mean
+Your CPEs	60.6	64.7	68.2	70.9	74.1
+Baseline CPEs	695.0	698.0	702.0	717.0	722.0
+Speedup		11.5	10.8	10.3	10.1	9.7	10.5
+
+Summary of Your Best Scores:
+  Rotate: 11.7 (rotate: Currentworking version)
+  Smooth: 42.7 (smooth: Current working version)

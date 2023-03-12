@@ -1,0 +1,17 @@
+This is bomb 11 for lab csapp2008.
+
+It is owned by the following student(s):
+SA08225276
+SA08225226
+
+I turned the moon into something I like to call a Death Star.
+1 2 3 1 2 3
+//答案总共有七组
+1 603
+//7^5
+5
+//ascii: 0x51 0x55 0x50 0x5B 0x5D 0x51
+//每个ascii的低四字节都在索引在array中对应的字符
+QUP[]Q
+// 7160/10=716
+7160
