@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "valarray": "c",
+        "memlib.h": "c",
+        "mm.h": "c",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "cstdio": "c",
+        "string_view": "c",
+        "functional": "c"
+    }
+}
