@@ -42,7 +42,7 @@ int main()
             cout << str[i];
         }
     }
-    cout << endl;
 
+    cout << endl;
     return 0;
 }
