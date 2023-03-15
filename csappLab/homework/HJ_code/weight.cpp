@@ -24,10 +24,13 @@ int main()
             count.push_back(input);
         }
         set<int> res = {0}, temp = {0}; // 必须先把0推进去
+        // 有N类砝码
         for (int i = 0; i < N; ++i)
         {
+            // 每类砝码有count[i]个
             for (int j = 1; j <= count[i]; ++j)
             {
+
                 set<int>::iterator iter = temp.begin();
                 while (iter != temp.end())
                 {
@@ -35,6 +38,7 @@ int main()
                     iter++;
                 }
             }
+            // temp存储现在已有的砝码重量的种类
             temp = res;
         }
         cout << res.size() << endl;
