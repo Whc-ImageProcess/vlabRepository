@@ -1,0 +1,1076 @@
+[
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-fno-pic",
+            "-nostdinc",
+            "-I.",
+            "entryother.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "entryother.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "umalloc.o",
+            "umalloc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "umalloc.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "cat.o",
+            "cat.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "cat.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "console.o",
+            "console.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "console.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "proc.o",
+            "proc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "proc.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "zombie.o",
+            "zombie.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "zombie.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "uart.o",
+            "uart.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "uart.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-Werror",
+            "-Wall",
+            "-o",
+            "mkfs",
+            "mkfs.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "mkfs.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "stressfs.o",
+            "stressfs.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "stressfs.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "spinlock.o",
+            "spinlock.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "spinlock.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "printf.o",
+            "printf.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "printf.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "ide.o",
+            "ide.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "ide.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "sysfile.o",
+            "sysfile.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "sysfile.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "syscall.o",
+            "syscall.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "syscall.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "sysproc.o",
+            "sysproc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "sysproc.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "exec.o",
+            "exec.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "exec.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-m32",
+            "-gdwarf-2",
+            "-Wa,-divide",
+            "-o",
+            "trapasm.o",
+            "trapasm.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "trapasm.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-nostdinc",
+            "-I.",
+            "initcode.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "initcode.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-m32",
+            "-gdwarf-2",
+            "-Wa,-divide",
+            "-o",
+            "swtch.o",
+            "swtch.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "swtch.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "sh.o",
+            "sh.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "sh.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "usertests.o",
+            "usertests.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "usertests.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "pipe.o",
+            "pipe.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "pipe.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "rm.o",
+            "rm.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "rm.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-fno-pic",
+            "-nostdinc",
+            "-I.",
+            "bootasm.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "bootasm.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "echo.o",
+            "echo.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "echo.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "mkdir.o",
+            "mkdir.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "mkdir.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-fno-pic",
+            "-O",
+            "-nostdinc",
+            "-I.",
+            "bootmain.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "bootmain.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "bio.o",
+            "bio.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "bio.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "main.o",
+            "main.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "main.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "forktest.o",
+            "forktest.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "forktest.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-m32",
+            "-gdwarf-2",
+            "-Wa,-divide",
+            "-o",
+            "vectors.o",
+            "vectors.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "vectors.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "string.o",
+            "string.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "string.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "picirq.o",
+            "picirq.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "picirq.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "log.o",
+            "log.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "log.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "ioapic.o",
+            "ioapic.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "ioapic.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "lapic.o",
+            "lapic.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "lapic.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "init.o",
+            "init.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "init.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "ls.o",
+            "ls.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "ls.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-m32",
+            "-gdwarf-2",
+            "-Wa,-divide",
+            "-o",
+            "entry.o",
+            "entry.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "entry.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "kill.o",
+            "kill.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "kill.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "ln.o",
+            "ln.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "ln.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "file.o",
+            "file.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "file.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "wc.o",
+            "wc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "wc.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-m32",
+            "-gdwarf-2",
+            "-Wa,-divide",
+            "-o",
+            "usys.o",
+            "usys.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "usys.S"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "fs.o",
+            "fs.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "fs.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "vm.o",
+            "vm.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "vm.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "kalloc.o",
+            "kalloc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "kalloc.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "grep.o",
+            "grep.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "grep.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "ulib.o",
+            "ulib.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "ulib.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "trap.o",
+            "trap.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "trap.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "mp.o",
+            "mp.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "mp.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "kbd.o",
+            "kbd.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "kbd.c"
+    },
+    {
+        "arguments": [
+            "gcc",
+            "-c",
+            "-fno-pic",
+            "-fno-builtin",
+            "-fno-strict-aliasing",
+            "-O2",
+            "-Wall",
+            "-ggdb",
+            "-m32",
+            "-Werror",
+            "-fno-omit-frame-pointer",
+            "-fno-stack-protector",
+            "-o",
+            "timer.o",
+            "timer.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-public-xv6-rev9",
+        "file": "timer.c"
+    }
+]

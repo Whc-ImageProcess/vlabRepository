@@ -2,51 +2,35 @@
 #include <vector>
 using namespace std;
 
-// HJ103 Redraiment的走法
 int main()
 {
-    int n, val;
-    cin >> n;
-    vector<int> vec;
-    for (size_t i = 0; i < n; i++)
+    int n;
+    while (cin >> n)
     {
-        cin >> val;
-        vec.push_back(val);
-    }
-
-    int maxLen = 0;
-    vector<int>::iterator idx = vec.begin();
-    for (int i = 0; i < n; i++)
-    {
-        // 从vec[i]出发从前到后起跳，找到递增序列最长的
-        // 可以将从i往后的数据进行排序
-
-        int cmp = vec[i];
-        int len = 1;
-        vector<int>::iterator idxTmp = idx;
-        // 找到比vec[i]大的最长的递增序列
-        while (idxTmp != vec.end())
+        vector<int> nums(n, 0);
+        for (int i = 0; i < n; i++)
         {
-            if (*idxTmp > cmp)
-            {
-                len++;
-                ++idxTmp;
-                cmp = *idxTmp;
-            }
-            else
-            {
-                ++idxTmp;
-            }
-        }
-        if (len > maxLen)
-        {
-            maxLen = len;
+            cin >> nums[i];
         }
 
-        // 更新为下一个
-        ++idx;
+        // dp[i]代表从前走到第i个的梅花桩（i从0开始）最多需要走的步数
+        vector<int> dp(n, 1);
+        int maxsteps = 0;
+        for (int i = 1; i < n; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                // 梅花桩j在梅花桩i的前面
+                if (nums[j] < nums[i] && dp[j] >= dp[i])
+                {
+                    // 如果梅花桩j比梅花桩i矮，但是梅花桩j的最多步数多于或等于梅花桩i的最多步数，
+                    // 那么更新梅花桩i的最多步数
+                    dp[i] = dp[j] + 1;
+                }
+            }
+            maxsteps = maxsteps > dp[i] ? maxsteps : dp[i];
+        }
+        cout << maxsteps << endl;
     }
-
-    cout << maxLen << endl;
     return 0;
 }

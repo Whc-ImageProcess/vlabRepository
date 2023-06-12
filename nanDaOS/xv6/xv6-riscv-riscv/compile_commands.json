@@ -19,6 +19,121 @@
             "-fno-pie",
             "-no-pie",
             "-o",
+            "kernel/printf.o",
+            "kernel/printf.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/printf.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/fs.o",
+            "kernel/fs.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/fs.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/proc.o",
+            "kernel/proc.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/proc.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-o",
+            "kernel/swtch.o",
+            "kernel/swtch.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/swtch.S"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/log.o",
+            "kernel/log.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/log.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
             "kernel/pipe.o",
             "kernel/pipe.c"
         ],
@@ -71,122 +186,11 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/fs.o",
-            "kernel/fs.c"
+            "kernel/virtio_disk.o",
+            "kernel/virtio_disk.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/fs.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-o",
-            "kernel/entry.o",
-            "kernel/entry.S"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/entry.S"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-o",
-            "kernel/kernelvec.o",
-            "kernel/kernelvec.S"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/kernelvec.S"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-o",
-            "kernel/swtch.o",
-            "kernel/swtch.S"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/swtch.S"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/bio.o",
-            "kernel/bio.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/bio.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/log.o",
-            "kernel/log.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/log.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/trap.o",
-            "kernel/trap.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/trap.c"
+        "file": "kernel/virtio_disk.c"
     },
     {
         "arguments": [
@@ -218,27 +222,12 @@
         "arguments": [
             "riscv64-unknown-elf-gcc",
             "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
             "-o",
-            "kernel/proc.o",
-            "kernel/proc.c"
+            "kernel/entry.o",
+            "kernel/entry.S"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/proc.c"
+        "file": "kernel/entry.S"
     },
     {
         "arguments": [
@@ -260,11 +249,11 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/start.o",
-            "kernel/start.c"
+            "kernel/plic.o",
+            "kernel/plic.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/start.c"
+        "file": "kernel/plic.c"
     },
     {
         "arguments": [
@@ -285,38 +274,16 @@
             "-fno-stack-protector",
             "-fno-pie",
             "-no-pie",
-            "-o",
-            "kernel/sysfile.o",
-            "kernel/sysfile.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/sysfile.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
+            "-march=rv64g",
+            "-nostdinc",
             "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
+            "-Ikernel",
             "-o",
-            "kernel/string.o",
-            "kernel/string.c"
+            "user/initcode.o",
+            "user/initcode.S"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/string.c"
+        "file": "user/initcode.S"
     },
     {
         "arguments": [
@@ -328,58 +295,6 @@
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
         "file": "kernel/trampoline.S"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/spinlock.o",
-            "kernel/spinlock.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/spinlock.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/sleeplock.o",
-            "kernel/sleeplock.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/sleeplock.c"
     },
     {
         "arguments": [
@@ -427,11 +342,11 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/console.o",
-            "kernel/console.c"
+            "kernel/sysfile.o",
+            "kernel/sysfile.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/console.c"
+        "file": "kernel/sysfile.c"
     },
     {
         "arguments": [
@@ -478,16 +393,12 @@
             "-fno-stack-protector",
             "-fno-pie",
             "-no-pie",
-            "-march=rv64g",
-            "-nostdinc",
-            "-I.",
-            "-Ikernel",
             "-o",
-            "user/initcode.o",
-            "user/initcode.S"
+            "kernel/string.o",
+            "kernel/string.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "user/initcode.S"
+        "file": "kernel/string.c"
     },
     {
         "arguments": [
@@ -509,63 +420,11 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/uart.o",
-            "kernel/uart.c"
+            "kernel/start.o",
+            "kernel/start.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/uart.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/plic.o",
-            "kernel/plic.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/plic.c"
-    },
-    {
-        "arguments": [
-            "riscv64-unknown-elf-gcc",
-            "-c",
-            "-Wall",
-            "-Werror",
-            "-O",
-            "-fno-omit-frame-pointer",
-            "-ggdb",
-            "-gdwarf-2",
-            "-mcmodel=medany",
-            "-ffreestanding",
-            "-fno-common",
-            "-nostdlib",
-            "-mno-relax",
-            "-I.",
-            "-fno-stack-protector",
-            "-fno-pie",
-            "-no-pie",
-            "-o",
-            "kernel/vm.o",
-            "kernel/vm.c"
-        ],
-        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/vm.c"
+        "file": "kernel/start.c"
     },
     {
         "arguments": [
@@ -613,6 +472,84 @@
             "-fno-pie",
             "-no-pie",
             "-o",
+            "kernel/sleeplock.o",
+            "kernel/sleeplock.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/sleeplock.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/bio.o",
+            "kernel/bio.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/bio.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/console.o",
+            "kernel/console.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/console.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
             "kernel/exec.o",
             "kernel/exec.c"
         ],
@@ -639,11 +576,11 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/virtio_disk.o",
-            "kernel/virtio_disk.c"
+            "kernel/vm.o",
+            "kernel/vm.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/virtio_disk.c"
+        "file": "kernel/vm.c"
     },
     {
         "arguments": [
@@ -665,10 +602,73 @@
             "-fno-pie",
             "-no-pie",
             "-o",
-            "kernel/printf.o",
-            "kernel/printf.c"
+            "kernel/uart.o",
+            "kernel/uart.c"
         ],
         "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
-        "file": "kernel/printf.c"
+        "file": "kernel/uart.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-o",
+            "kernel/kernelvec.o",
+            "kernel/kernelvec.S"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/kernelvec.S"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/spinlock.o",
+            "kernel/spinlock.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/spinlock.c"
+    },
+    {
+        "arguments": [
+            "riscv64-unknown-elf-gcc",
+            "-c",
+            "-Wall",
+            "-Werror",
+            "-O",
+            "-fno-omit-frame-pointer",
+            "-ggdb",
+            "-gdwarf-2",
+            "-mcmodel=medany",
+            "-ffreestanding",
+            "-fno-common",
+            "-nostdlib",
+            "-mno-relax",
+            "-I.",
+            "-fno-stack-protector",
+            "-fno-pie",
+            "-no-pie",
+            "-o",
+            "kernel/trap.o",
+            "kernel/trap.c"
+        ],
+        "directory": "/root/vsCodeProjects/vlabRepository/nanDaOS/xv6/xv6-riscv-riscv",
+        "file": "kernel/trap.c"
     }
 ]

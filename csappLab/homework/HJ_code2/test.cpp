@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <map>
 using namespace std;
 
 // #pragma pack(2)
@@ -52,8 +53,13 @@ int main()
     // cout << sizeof(n1) << endl;
     // printf("%p  %p\n", &(n1.a), &(n1.b));
 
-    Test1 t1;
-    cout << sizeof(t1) << endl;
+    // Test1 t1;
+    // cout << sizeof(t1) << endl;
+
+    map<string, string> hashMap;
+    string key = "hello";
+    string value = "world";
+    hashMap[key] = value;
 
     return 0;
 }
