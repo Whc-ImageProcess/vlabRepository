@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.c": "c",
+        "readme": "plaintext",
         "valarray": "c",
         "memlib.h": "c",
         "mm.h": "c",
@@ -9,6 +10,9 @@
         "*.tcc": "cpp",
         "cstdio": "c",
         "string_view": "c",
-        "functional": "c"
+        "functional": "c",
+        "new": "cpp",
+        "random": "cpp",
+        "limits": "cpp"
     }
 }
